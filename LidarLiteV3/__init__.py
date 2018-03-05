@@ -1,1 +1,1 @@
-from lidar import Connect
+from .lidar import Connect

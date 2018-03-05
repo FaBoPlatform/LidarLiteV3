@@ -1,13 +1,17 @@
 # LidarLiteV3 Library
 #### Install:
 ```
-pip install lidarlite_v3
+git clone https://github.com/FaBoPlatform/LidarLiteV3
+# Python 2.7
+pip install LidarLiteV3/
+# Python 3.6
+pip3 install LidarLiteV3/
 ```
 #### Usage:
 ```python
-import lidarlite_v3
+import LidarLiteV3
 
-lidar = lidarlite_v3.Connect()
+lidar = LidarLiteV3.Connect()
 distance = lidar.getDistance()
 print("Distance: %d" % distance)
 ```
@@ -16,9 +20,9 @@ Distance: 267
 ```
 #### Change the address from the default 0x62 to 0x64
 ```python
-import lidarlite_v3
+import LidarLiteV3
 
-lidar = lidarlite_v3.Connect() # the same as lidarlite_v3.Connect(0x62)
+lidar = LidarLiteV3.Connect() # the same as LidarLiteV3.Connect(0x62)
 lidar.changeAddress(0x64)
 
 distance = lidar.getDistance()

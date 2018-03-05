@@ -12,12 +12,13 @@ classifiers = ['Development Status :: 4 - Beta',
                'License :: OSI Approved :: Apache Software License',
                'Intended Audience :: Developers',
                'Programming Language :: Python :: 2.7',
+               'Programming Language :: Python :: 3.6',
                'Topic :: Software Development',
                'Topic :: System :: Hardware']
 
 setup(
     name         = 'LidarLiteV3',
-    version      = '0.1',
+    version      = '0.2',
     author       = 'FaBo',
     author_email = 'info@fabo.io',
     description  = "This is a library for the Lidar Lite v3.",
