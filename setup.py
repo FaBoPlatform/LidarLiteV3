@@ -18,7 +18,7 @@ classifiers = ['Development Status :: 4 - Beta',
 
 setup(
     name         = 'LidarLiteV3',
-    version      = '0.2',
+    version      = '0.3',
     author       = 'FaBo',
     author_email = 'info@fabo.io',
     description  = "This is a library for the Lidar Lite v3.",
