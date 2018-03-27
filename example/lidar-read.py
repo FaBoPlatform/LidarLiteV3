@@ -13,13 +13,16 @@ def console_input(msg='Enter key'):
         input(msg)
     return
 
+BUSNUM=1
+ADDRESS=0x62
+
 console_input('Connect 1st Lidar cable and Enter key')
 ''' 1st Lidar
 Lidar Lite v3のケーブルを一本だけ接続します。
 Lidarはアドレス0x62で起動します。
-このアドレスを0x64に変更してセンサー値を取得できることを確認します。
+このアドレスを0x52に変更してセンサー値を取得できることを確認します。
 '''
-lidar1 = LidarLiteV3.Connect(0x62)
+lidar1 = LidarLiteV3.Connect(busnum=BUSNUM, address=ADDRESS)
 lidar1.changeAddress(0x52)
 
 for i in range(300):
@@ -36,9 +39,9 @@ console_input('Connect 2nd Lidar cable and Enter key')
 ''' 2nd Lidar
 Lidar Lite v3の2個目のケーブルを接続します。
 Lidarはアドレス0x62で起動します。
-このアドレスを0x66に変更してセンサー値を取得できることを確認します。
+このアドレスを0x54に変更してセンサー値を取得できることを確認します。
 '''
-lidar2 = LidarLiteV3.Connect(0x62)
+lidar2 = LidarLiteV3.Connect(busnum=BUSNUM, address=ADDRESS)
 lidar2.changeAddress(0x54)
 
 for i in range(300):
@@ -55,9 +58,9 @@ console_input('Connect 3rd Lidar cable and Enter key')
 ''' 3rd Lidar
 Lidar Lite v3の3個目のケーブルを接続します。
 Lidarはアドレス0x62で起動します。
-このアドレスを0x68に変更してセンサー値を取得できることを確認します。
+このアドレスを0x56に変更してセンサー値を取得できることを確認します。
 '''
-lidar3 = LidarLiteV3.Connect(0x62)
+lidar3 = LidarLiteV3.Connect(busnum=BUSNUM, address=ADDRESS)
 lidar3.changeAddress(0x56)
 
 for i in range(300):
