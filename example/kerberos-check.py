@@ -5,15 +5,16 @@ import time
 import sys
 import LidarLiteV3
 
-pcal6408 = FaBoGPIO_PCAL6408.PCAL6408()
-
+BUSNUM=1
+pcal6408 = FaBoGPIO_PCAL6408.PCAL6408(busnum=BUSNUM)
+ADDRESS=0x62
 try:
     ########################################
     # Lidar1のアドレスを変更する 0x62 -> 0x52
     ########################################
     pcal6408.setDigital(1<<0, 1) # 0番目のLidarの電源を入れる
     time.sleep(0.1)
-    lidar1 = LidarLiteV3.Connect(0x62)
+    lidar1 = LidarLiteV3.Connect(busnum=BUSNUM, address=ADDRESS)
     lidar1.changeAddress(0x52)
     for i in range(300):
         distance1 = lidar1.getDistance()
@@ -30,7 +31,7 @@ try:
     ########################################
     pcal6408.setDigital(1<<1, 1) # 1番目のLidarの電源を入れる
     time.sleep(0.1)
-    lidar2 = LidarLiteV3.Connect(0x62)
+    lidar2 = LidarLiteV3.Connect(busnum=BUSNUM, address=ADDRESS)
     lidar2.changeAddress(0x54)
 
     for i in range(300):

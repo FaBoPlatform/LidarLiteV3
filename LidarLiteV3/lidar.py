@@ -15,7 +15,7 @@ elif SMBUS == 'smbus2':
 
 class Connect():
 
-    def __init__(self, address=0x62):
+    def __init__(self, busnum=1, address=0x62):
         self.address = address
         # Resgiter Address
         self.ADDR_ACQ_COMMAND = 0x00 # DevieConnand
@@ -34,7 +34,7 @@ class Connect():
         # I2C_CONFIG VALUE
         self.DISABLE_DEFAULT_ADDRESS_RESPONSE_CONTROL = 0x08
 
-        self.bus = smbus.SMBus(1)
+        self.bus = smbus.SMBus(busnum)
 
 
     def getDistance(self):
